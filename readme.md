@@ -1,19 +1,19 @@
-# Leaf Veins
+# Leaf View PHP
 
-Veins is a simple, lightweight, and fast templating engine for PHP. It is designed to be easy to use and easy to extend.
+Pure PHP views for Leaf/ 
 
 ## Installation
 
 You can install Veins using the Leaf CLI:
 
 ```bash
-leaf install veins
+leaf install view-php
 ```
 
 Or with composer:
 
 ```bash
-composer require leafs/veins
+composer require leafs/view-php
 ```
 
 ## Usage
@@ -23,14 +23,10 @@ composer require leafs/veins
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Leaf\Veins;
+use Leaf\ViewPhp;
 
-$veins = new Veins();
-$veins->configure([
-    'templateDir' => __DIR__ . '/views/',
-    'cacheDir' => __DIR__ . '/cache/',
-]);
-$veins->render('hello', ['name' => 'John']);
+$veins = new ViewPHP();
+$veins->render('views/hello.php', ['name' => 'John']);
 ```
 
 ```html
@@ -44,18 +40,7 @@ You can configure Veins by passing an array to the `configure` method:
 
 ```php
 $veins->configure([
-    'checksum' => [],
-    'charset' => 'UTF-8',
     'debug' => false,
     'templateDir' => 'views/',
-    'cacheDir' => 'cache/',
-    'baseUrl' => '',
-    'phpEnabled' => false,
-    'autoEscape' => true,
-    'sandbox' => true,
-    'removeComments' => false,
-    'customTags' => [],
 ]);
 ```
-
-Find the full documentation at [leafphp.dev/modules/views/veins](https://leafphp.dev/modules/views/veins/).

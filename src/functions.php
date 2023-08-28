@@ -2,18 +2,13 @@
 
 declare(strict_types=1);
 
-if (!function_exists('veins')) {
-    /**
-     * Return the Leaf veins instance
-     *
-     * @return Leaf\Veins
-     */
-    function veins()
+if (!function_exists('view_php')) {
+    function view_php(): \Leaf\ViewPhp
     {
-        if (!(\Leaf\Config::get('veins.instance'))) {
-            \Leaf\Config::set('veins.instance', new Leaf\Veins());
+        if (!(\Leaf\Config::get('view_php.instance'))) {
+            \Leaf\Config::set('view_php.instance', new Leaf\ViewPhp());
         }
 
-        return \Leaf\Config::get('veins.instance');
+        return \Leaf\Config::get('view_php.instance');
     }
 }
